@@ -11,6 +11,7 @@ import { RiShieldUserLine } from "react-icons/ri";
 const Home = () => {
   const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
 
+  console.log(REACT_APP_API_URL, "/profile");
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
 
