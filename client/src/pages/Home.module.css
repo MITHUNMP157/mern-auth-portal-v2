@@ -1,0 +1,60 @@
+.container {
+  min-height: 75vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.authLogo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 75px;
+  transition: 5s;
+}
+
+.authLogo:hover {
+  transition: 10s;
+  rotate: calc(360deg);
+}
+.userDetails {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.377);
+  border-radius: 10px;
+  box-shadow: 5px 3px 10px 2px rgba(100, 100, 100, 0.274);
+  transition: 2s;
+}
+
+.userDetails:hover {
+  transition: 0.6s;
+  box-shadow: 5px 1px 10px 8px rgba(0, 0, 0, 0.418);
+}
+
+.userLogDetails {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px 65px;
+}
+
+.logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  cursor: pointer;
+  font-size: 35px;
+  transition: 0.5s;
+}
+
+.logout:hover {
+  font-size: 45px;
+  transition: 0.5s;
+}
