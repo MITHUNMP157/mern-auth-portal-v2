@@ -16,11 +16,14 @@ const Home = () => {
   const verifyToken = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get(`${REACT_APP_API_URL}/profile`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.get(
+        `https://mern-auth-portal-v2.onrender.com/api/auth/profile`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = response.data;
 
       setUserData(data.user);
