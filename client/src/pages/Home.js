@@ -9,20 +9,18 @@ import { SiAuthelia } from "react-icons/si";
 import { RiShieldUserLine } from "react-icons/ri";
 
 const Home = () => {
+  const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
 
   const verifyToken = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}profile`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.get(`${REACT_APP_API_URL}profile`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const data = response.data;
 
       setUserData(data.user);
