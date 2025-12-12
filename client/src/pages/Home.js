@@ -10,13 +10,14 @@ import { RiShieldUserLine } from "react-icons/ri";
 
 const Home = () => {
   const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
+
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
 
   const verifyToken = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get(`${REACT_APP_API_URL}profile`, {
+      const response = await axios.get(`${REACT_APP_API_URL}/profile`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -24,7 +25,9 @@ const Home = () => {
       const data = response.data;
 
       setUserData(data.user);
-    } catch (error) {}
+    } catch (error) {
+      console.log("Error from verifytoken:", error.message);
+    }
   };
 
   useEffect(() => {

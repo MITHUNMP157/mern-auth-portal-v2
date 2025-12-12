@@ -16,7 +16,6 @@ export const register = async (userData) => {
       userInput
     );
     const data = response.data;
-    console.log(data);
     console.log("User Register success");
   } catch (error) {
     console.error("Error from User register:", error.message);
@@ -32,7 +31,6 @@ export const login = async (userData) => {
   try {
     const response = await axios.post(`${REACT_APP_API_URL}/login`, userInput);
     const data = response.data;
-    console.log(data);
 
     const token = data.token;
     localStorage.setItem("token", token);
