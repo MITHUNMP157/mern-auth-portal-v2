@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
-import { login, register } from "../api/Auth";
+import { login } from "../api/Auth";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -32,7 +32,7 @@ const Login = () => {
       toast.success("User Login Success.");
       setForm({ email: "", password: "" });
 
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       setForm({ email: "", password: "" });
       console.error("Error from Register Page:", error.message);

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Navigate } from "react-router-dom";
 
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
 
@@ -15,8 +14,8 @@ export const register = async (userData) => {
       `${REACT_APP_API_URL}/register`,
       userInput
     );
-    const data = response.data;
     console.log("User Register success");
+    return response;
   } catch (error) {
     console.error("Error from User register:", error.message);
     throw error;
