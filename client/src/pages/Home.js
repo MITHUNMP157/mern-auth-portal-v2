@@ -16,7 +16,7 @@ const Home = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.get(
-        `http://localhost:7070/api/auth/profile`,
+        `${process.env.REACT_APP_API_URL}profile`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
