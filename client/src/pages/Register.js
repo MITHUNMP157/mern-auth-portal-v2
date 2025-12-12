@@ -77,6 +77,9 @@ const Register = () => {
           <br />
           <button type="submit">Register</button>
         </form>
+        <Link to="/login" className={styles.authLink}>
+          Click to Login
+        </Link>
       </div>
     </div>
   );

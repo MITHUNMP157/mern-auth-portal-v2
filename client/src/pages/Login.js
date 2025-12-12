@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 import styles from "./Login.module.css";
 import { login, register } from "../api/Auth";
 import { toast } from "react-toastify";
@@ -70,6 +70,9 @@ const Login = () => {
           <br />
           <button type="submit">Login</button>
         </form>
+        <Link to="/register" className={styles.authLink}>
+          Click to Register
+        </Link>
       </div>
     </div>
   );

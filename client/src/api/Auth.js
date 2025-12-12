@@ -41,8 +41,3 @@ export const login = async (userData) => {
     throw error;
   }
 };
-
-export const logout = () => {
-  localStorage.removeItem("token");
-  <Navigate to="/login" />;
-};

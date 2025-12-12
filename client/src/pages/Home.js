@@ -39,6 +39,14 @@ const Home = () => {
     <Navigate to="/login" />;
   };
 
+  const firstCaptial = (text) => {
+    if (!text) {
+      return "";
+    } else {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <span className={styles.authLogo}>
@@ -49,10 +57,10 @@ const Home = () => {
 
       <div className={styles.userDetails}>
         <p>
-          Username: <b>{userData.username}</b>
+          Username: <b>{firstCaptial(userData.username)}</b>
         </p>
         <p>
-          Email: <b>{userData.email}</b>{" "}
+          Email: <b>{firstCaptial(userData.email)}</b>{" "}
         </p>
 
         <TbLogout
@@ -64,7 +72,7 @@ const Home = () => {
         />
         <span className={styles.userLogDetails}>
           <RiShieldUserLine style={{ marginTop: "5px" }} />
-          <b>{userData.username}</b>
+          <b>{firstCaptial(userData.username)}</b>
         </span>
       </div>
     </div>

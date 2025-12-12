@@ -11,7 +11,17 @@ const PORT = process.env.PORT;
 connectDB();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:7070",
+      "https://mern-auth-portal-v2.onrender.com",
+    ],
+    credentials: true,
+  })
+);
+
+//app.use(cors());
 
 app.use("/api/auth", authRoute);
 
