@@ -17,7 +17,7 @@ const Home = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.get(
-        `https://mern-auth-portal-v2.onrender.com/api/auth/profile`,
+        `https://mern-auth-portal-v2.onrender.com/profile`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
